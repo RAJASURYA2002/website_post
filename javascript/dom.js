@@ -108,12 +108,25 @@ const account5 = {
   local: "ta-IN",
 };
 //login data recever//
- let funa = localStorage.getItem("send");
- let userna = localStorage.getItem("send1");
- let pass = localStorage.getItem("send2");
- 
-// console.log(aaa);
+let funa = localStorage.getItem("send");
+let userna = localStorage.getItem("send1");
+let pass = localStorage.getItem("send2");
 //login data recever//
+const verify = [account1.name,account2.name,account3.name,account4.name,account5.name];
+console.log(verify);
+
+//
+let i,c=0;
+for(i=0;i<verify.length;i++)
+{
+  if(verify[i]===userna)
+  {
+    c=1;
+    break;
+  }
+}
+//
+
 const account6 = {
   fullName: funa,
   name: userna,
@@ -124,9 +137,15 @@ const account6 = {
   loanCount: 0,
   local: "en-IN",
 };
-const verify = [account1.name,account2.name,account3.name,account4.name,account5.name,];
-localStorage.setItem("main_send", verify);
-const allAccount = [account1, account2, account3, account4, account5,account6];
+let allAccount=[];
+if(c==0){
+ allAccount = [account1, account2, account3, account4, account5,account6];
+}
+else
+{
+  allAccount = [account1, account2, account3, account4, account5];
+  alert(`you have already Sign-In ${funa}!...\ntry to Log-In.`);
+}
 //user login//
 ///using find method we can find the user data
 //Note :if the user name and pin are incorrect then the function will look for the name, if ther is no name find it will return error message to avoid this use '?'
@@ -357,14 +376,18 @@ const whishshow = function () {
     // alert("Refresh and refresh with Tea!...\n Good Evening...");
   } else if (daywish >= 18 && daywish < 22) {
     whish.textContent = "Good Night...";
-    alert(
-      // "“Night is the wonderful opportunity to take rest, to forgive, to smile, to get ready for all the battles that you have to fight tomorrow.” “As the night gets dark, let your worries fade. Sleep peacefully knowing you've done all you can do for today.” “The night is more alive and more richly colored than the day.”"
-    );
+    // alert(
+    //   // "“Night is the wonderful opportunity to take rest, to forgive, to smile, to get ready for all the battles that you have to fight tomorrow.” “As the night gets dark, let your worries fade. Sleep peacefully knowing you've done all you can do for today.” “The night is more alive and more richly colored than the day.”"
+    // );
   } else if ((daywish >= 22 && daywish < 24) || (daywish >= 1 && daywish < 5)) {
     whish.textContent = "Good Noon...";
     // alert("The dead of midnight is the noon of thought.");
   } else {
   }
 };
-// let aaa = localStorage.getItem("send");
-// console.log(aaa);
+// import{
+//   send
+// } from './loginpage.js';
+// console.log(send.name);
+// let funaz = localStorage.getItem("send");
+// console.log(funaz);

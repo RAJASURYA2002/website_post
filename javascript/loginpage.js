@@ -1,27 +1,33 @@
 "use strict";
-// let aa = 10;
-// localStorage.setItem("send", aa);
 const login_button=document.querySelector('.sign_up_btn');
 const name1=document.querySelector('.full_name');
 const name2=document.querySelector('.user_name');
 const pass1=document.querySelector('.password');
 const pass2=document.querySelector('.password_cof');
-const verify_check = localStorage.getItem("main_send");
-const userCheck=verify_check.split(',');
 const display=document.querySelector('.display');
+// // let a=[];
+// // export const send={
+// //     name:[],
+// // };
+// // function
+// // login_button.addEventListener("click",function(){
+
+// // });
+// let a=10;
+// localStorage.setItem("send", a);
 login_button.addEventListener('click',function(){
     let c=0,i;
 const full_name=name1.value;
 const user=name2.value;
 const password=pass1.value;
 const con_password=pass2.value;
-for(i=0;i<userCheck.length;i++)
-{
-    if(user===userCheck[i])
-    {
-       c=1;
-    }
-}
+// for(i=0;i<userCheck.length;i++)
+// {
+//     if(user===userCheck[i])
+//     {
+//        c=1;
+//     }
+// }
 // console.log(c);
 if(password===con_password)
 {
