@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Rubik+Bubbles&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:ital,wght@1,300&family=Rubik+Bubbles&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:ital,wght@1,300&family=Rubik+Bubbles&family=Source+Sans+Pro:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:ital,wght@0,600;1,300&family=Roboto+Condensed:ital@1&family=Rubik+Bubbles&family=Source+Sans+Pro:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  background-color: aliceblue;
+}
+/* NAV BAR */
+.nav {
+  /* border: 5px solid; */
+  display: flex;
+  justify-content: space-between;
+}
+/* LOG IN MESSAGE */
+.logoname {
+  font-family: cursive;
+  font-size: 35px;
+  margin-top: 20px;
+  color: aquamarine;
+}
+/* LOG IN MESSAGE */
+
+/* LOGO  IMAGE*/
+.logo {
+  width: 70px;
+  height: 80px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+/* LOGO  IMAGE*/
+
+/* USER PIN BUTTON */
+.login {
+  display: flex;
+  /* border: 2px solid; */
+  width: 400px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* USER PIN */
+.input {
+  border: 2px solid white;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+/* USER PIN */
+
+/* USER */
+.user,
+.tm_name,
+.tm_amount,
+.pin,
+.rloan,
+.ca_name,
+.ca_amount[type="text"] {
+  text-align: center;
+  font-family: cursive;
+  border: 3px solid aqua;
+  font-size: 15px;
+}
+/* USER */
+
+/* USER BUTTON */
+.btn {
+  background-color: aliceblue;
+  border: 0px solid aliceblue;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+/* USER BUTTON */
+
+/* USER PIN BUTTON */
+
+/* MAIN DISPLAY */
+/* MAIN */
+.main {
+  /* border: 5px solid; */
+  position: relative;
+  width: 1100px;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+/* MAIN */
+
+/* WELCOME YOU */
+.username {
+  font-size: 25px;
+  letter-spacing: 0.1rem;
+  font-family: cursive;
+}
+/* WELCOME YOU */
+
+/* DISPALY */
+
+.display {
+  display: none;
+}
+
+/* DISPALY */
+
+/* CURRENT BALANCE DATE ₹₹*/
+.account_information {
+  display: flex;
+  /* border: 3px solid; */
+  justify-content: space-between;
+}
+/* CURRENT BALANCE DATE ₹₹*/
+
+/* CURRENT BALANCE */
+.current_balance {
+  font-size: 35px;
+  color: black;
+  font-weight: 500;
+}
+/* CURRENT BALANCE */
+
+/* DATE TIME*/
+.date_time {
+  font-size: 20px;
+  color: gray;
+  margin-left: 5px;
+}
+/* DATE TIME*/
+
+/* BALANCE ₹ */
+.balance {
+  font-size: 50px;
+  font-weight: 500;
+}
+/* BALANCE ₹ */
+/* DEPOSIT _ WITHDRAWAL_CONTAINER + ACTION CONTINER */
+.scrol_action_container {
+  /* border: 3px solid; */
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+/* DEPOSIT _ WITHDRAWAL_CONTAINER + ACTION CONTINER */
+
+/* DEPOSIT _ WITHDRAWAL_CONTAINER */
+.d_w_container {
+  border: 5px solid white;
+  width: 55%;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: white;
+  margin-top: 7px;
+  border-radius: 30px;
+}
+/* DEPOSIT _ WITHDRAWAL_CONTAINER */
+
+/* DEPOSIT _ WITHDRAWAL_CONTAINER SCROL */
+.scrol::-webkit-scrollbar {
+  width: 10px;
+}
+.scrol::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+  border-radius: 15px;
+}
+.scrol::-webkit-scrollbar-track {
+  background-color: azure;
+  border-radius: 15px;
+}
+/* DEPOSIT _ WITHDRAWAL_CONTAINER SCROL */
+
+/* DEPOSIT _ WITHDRAWAL_CONTAINER DETAIL*/
+.d_w_a_container {
+  /* border: 5px solid; */
+  display: flex;
+  justify-content: space-between;
+}
+.d_w_date_container {
+  /* border: 3px solid; */
+  display: flex;
+  width: 300px;
+}
+.deposit {
+  border: 4px solid;
+  width: 90px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 5px;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  border-color: white;
+  color: whitesmoke;
+  margin-left: 25px;
+  margin-top: 40px;
+}
+.withdrawal {
+  border: 4px solid;
+  width: 90px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 5px;
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  border-color: white;
+  color: whitesmoke;
+  margin-left: 25px;
+  margin-top: 40px;
+}
+.date {
+  margin-top: 48px;
+  margin-left: 15px;
+}
+.amount {
+  margin-top: 45px;
+  font-size: 30px;
+  margin-right: 15px;
+}
+/* ACTION */
+.box1 {
+  margin: 5px;
+  border: 3px solid;
+  width: 500px;
+  height: 180px;
+  border-radius: 20px;
+  border-color: white;
+  /* background-color: #ffb003; */
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+.transfer_money,
+.request_loan,
+.close_account {
+  background-color: transparent;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 35px;
+  margin-left: 45px;
+}
+.tm_name,
+.rloan,
+.ca_name {
+  margin-left: 50px;
+  margin-top: 25px;
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.tm_amount,
+.ca_amount {
+  margin-left: 5px;
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.go {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.message {
+  display: flex;
+  /* border: 3px solid; */
+  width: 250px;
+  margin-left: 90px;
+  margin-top: 15px;
+  justify-content: space-between;
+  background-color: transparent;
+}
+.point {
+  background-color: transparent;
+}
+.box2 {
+  margin: 5px;
+  border: 3px solid;
+  width: 500px;
+  height: 180px;
+  border-radius: 20px;
+  border-color: white;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.box3 {
+  margin: 5px;
+  border: 3px solid;
+  width: 500px;
+  height: 180px;
+  border-radius: 20px;
+  border-color: white;
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+/* ACTION */
+
+/* FOOTER */
+.basic_information {
+  display: flex;
+  position: absolute;
+  /* border: 5px solid; */
+  top: 700px;
+  margin-left: 70px;
+  width: 700px;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.in {
+  color: #66c873;
+  font-size: 30px;
+  letter-spacing: 0.1rem;
+}
+.out {
+  color: #f5465d;
+  font-size: 30px;
+  letter-spacing: 0.1rem;
+}
+.interest {
+  color: #66c873;
+  font-size: 30px;
+  letter-spacing: 0.1rem;
+}
+/* IN OUT INTEREST */
+.span {
+  font-weight: bold;
+  color: black;
+  font-size: 15px;
+  letter-spacing: 0.1rem;
+}
+/* IN OUT INTEREST */
+.sort {
+  font-weight: bold;
+  font-size: 15px;
+  background-color: aliceblue;
+  border: 1px solid aliceblue;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.logout {
+  margin: 7px;
+  position: absolute;
+  /* border: 5px solid; */
+  top: 700px;
+  margin-left: 880px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 52px;
+}
+.time {
+  font-weight: bold;
+}
+.wrongmessage {
+  position: absolute;
+  border: 4px solid;
+  width: 300px;
+  height: 150px;
+  margin-left: 40%;
+  margin-top: 15%;
+  background-color: antiquewhite;
+  border-color: antiquewhite;
+}
+.wrong {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  background-color: antiquewhite;
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: 0.1rem;
+}
+.try {
+  text-align: center;
+  margin: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: antiquewhite;
+  letter-spacing: 0.1rem;
+}
+.display1 {
+  display: none;
+}
+.data {
+  display: flex;
+  justify-content: space-between;
+  /* border: 5px solid; */
+  background-color: aliceblue;
+}

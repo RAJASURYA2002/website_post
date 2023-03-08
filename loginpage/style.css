@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+}
+.container {
+  display: flex;
+  position: relative;
+  /* border:  5px solid aliceblue; */
+  box-shadow: 15px black;
+  width: 900px;
+  height: 592px;
+  margin-left: 18%;
+  margin-top: 7%;
+  border-radius: 25px;
+}
+
+.advertisement {
+  /* border-right: 5px solid; */
+  width: 450px;
+  height: 583px;
+  background-color: #c3ceda;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.add {
+  position: absolute;
+  /* border: 5px solid; */
+  text-align: center;
+  padding: 10px;
+  margin-top: 28%;
+  margin-left: 8%;
+  color: royalblue;
+}
+
+.form {
+  border: 15px solid aliceblue;
+  width: 450px;
+  height: 583px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: aliceblue;
+}
+form {
+  /* border: 5px solid; */
+  width: 300px;
+  height: 500px;
+  margin-left: 68px;
+  margin-top: 38px;
+  padding: 15px;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-left: 110px;
+}
+.form_welcome {
+  text-align: center;
+  font-size: 25px;
+  font-weight: lighter;
+}
+.slogan {
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+}
+.full_name,
+.user_name,
+.password,
+.password_cof,
+.sign_up_btn {
+  width: 250px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+.sign_up_btn {
+  background-color: #00d100;
+  color: white;
+  font-size: 15px;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+.al_acc {
+  text-align: center;
+  margin-top: 20px;
+}
+.checkbox{
+  position: absolute;
+  /* border: 5px solid; */
+  width: 250px;
+  height: 250px;
+  top: 0;
+  padding: 20px;
+  margin-top: 250px;
+  margin-left: 600px;
+}
+.done{
+  width: 200px;
+  height: 200px;
+ 
+}
+.display{
+  display: none;
+}
+.login{
+ margin-left: 18px;
+ font-size: 20px;
+ text-decoration: none;
+ font-weight: bolder;
+}
