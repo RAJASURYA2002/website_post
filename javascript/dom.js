@@ -109,32 +109,17 @@ const account5 = {
 };
 //login data recever//
 let funa = localStorage.getItem("send");
-let userna = localStorage.getItem("send1");
+let u = localStorage.getItem("send1");
 let pass = localStorage.getItem("send2");
 //login data recever//
-const verify = [
-  account1.name,
-  account2.name,
-  account3.name,
-  account4.name,
-  account5.name,
-];
-console.log(verify);
 
 //
-let i,
-  c = 0;
-for (i = 0; i < verify.length; i++) {
-  if (verify[i] === userna) {
-    c = 1;
-    break;
-  }
-}
+console.log(u);
 //
 
 const account6 = {
   fullName: funa,
-  name: userna,
+  name: u,
   pin: Number(pass),
   balance: [],
   dates: [],
@@ -142,13 +127,7 @@ const account6 = {
   loanCount: 0,
   local: "en-IN",
 };
-let allAccount = [];
-if (c == 0) {
-  allAccount = [account1, account2, account3, account4, account5, account6];
-} else {
-  allAccount = [account1, account2, account3, account4, account5];
-  alert(`you have already Sign-In ${funa}!...\ntry to Log-In.`);
-}
+let allAccount = [account1, account2, account3, account4, account5, account6];
 //user login//
 ///using find method we can find the user data
 //Note :if the user name and pin are incorrect then the function will look for the name, if ther is no name find it will return error message to avoid this use '?'
@@ -388,9 +367,3 @@ const whishshow = function () {
   } else {
   }
 };
-// import{
-//   send
-// } from './loginpage.js';
-// console.log(send.name);
-// let funaz = localStorage.getItem("send");
-// console.log(funaz);
