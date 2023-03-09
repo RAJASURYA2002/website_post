@@ -109,17 +109,27 @@ const account5 = {
 };
 //login data recever//
 let funa = localStorage.getItem("send");
-let u = localStorage.getItem("send1");
+let userna = localStorage.getItem("send1");
 let pass = localStorage.getItem("send2");
 //login data recever//
+const verify = [account1.name,account2.name,account3.name,account4.name,account5.name];
+console.log(verify);
 
 //
-console.log(u);
+let i,c=0;
+for(i=0;i<verify.length;i++)
+{
+  if(verify[i]===userna)
+  {
+    c=1;
+    break;
+  }
+}
 //
 
 const account6 = {
   fullName: funa,
-  name: u,
+  name: userna,
   pin: Number(pass),
   balance: [],
   dates: [],
@@ -127,7 +137,15 @@ const account6 = {
   loanCount: 0,
   local: "en-IN",
 };
-let allAccount = [account1, account2, account3, account4, account5, account6];
+let allAccount=[];
+if(c==0){
+ allAccount = [account1, account2, account3, account4, account5,account6];
+}
+else
+{
+  allAccount = [account1, account2, account3, account4, account5];
+  alert(`you have already Sign-In ${funa}!...\ntry to Log-In.`);
+}
 //user login//
 ///using find method we can find the user data
 //Note :if the user name and pin are incorrect then the function will look for the name, if ther is no name find it will return error message to avoid this use '?'
@@ -186,7 +204,6 @@ const setTime = function () {
 };
 const off = function () {
   display.classList.add("display");
-  whish.textContent = "Log in to get started";
 };
 
 const calcDayPassed = (date1, date2) =>
@@ -234,6 +251,7 @@ const usercheck = function (user, pin) {
   setTimeout(() => off(), 600000);
   let find = allAccount.find((mov) => mov?.name === user);
   if (user === find?.name && Number(pin) === find?.pin) {
+   
     display.classList.remove("display");
     usreNameDisplay.textContent = `Welcome you! ${find.fullName}`;
     logoName.textContent = "Good Morning...";
@@ -367,3 +385,9 @@ const whishshow = function () {
   } else {
   }
 };
+// import{
+//   send
+// } from './loginpage.js';
+// console.log(send.name);
+// let funaz = localStorage.getItem("send");
+// console.log(funaz);

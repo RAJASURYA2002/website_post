@@ -309,24 +309,24 @@
   /* border: 5px solid; */
   top: 700px;
   margin-left: 70px;
-  width: 525px;
+  width: 700px;
   justify-content: space-between;
   margin-top: 45px;
 }
 
 .in {
   color: #66c873;
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 0.1rem;
 }
 .out {
   color: #f5465d;
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 0.1rem;
 }
 .interest {
   color: #66c873;
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 0.1rem;
 }
 /* IN OUT INTEREST */
@@ -339,7 +339,7 @@
 /* IN OUT INTEREST */
 .sort {
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
   background-color: aliceblue;
   border: 1px solid aliceblue;
   letter-spacing: 0.1rem;
@@ -349,13 +349,11 @@
   margin: 7px;
   position: absolute;
   /* border: 5px solid; */
-  width: 250px;
   top: 700px;
-  margin-left: 900px;
+  margin-left: 880px;
   font-size: 15px;
   font-weight: 500;
   margin-top: 52px;
-  text-align: center;
 }
 .time {
   font-weight: bold;
