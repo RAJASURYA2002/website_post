@@ -126,7 +126,7 @@ for(i=0;i<verify.length;i++)
   }
 }
 //
-
+console.log(c);
 const account6 = {
   fullName: funa,
   name: userna,
@@ -166,7 +166,6 @@ const option2 = {
 let userAccountStore = [];
 const displayDates = function (date) {
   const dis = calcDayPassed(new Date(), date);
-  console.log(dis);
   if (dis === 0) return "Today";
   if (dis === 1) return "Yesterday";
   if (dis === 2) return "3 Days ago";

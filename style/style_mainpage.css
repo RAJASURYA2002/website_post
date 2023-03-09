@@ -309,31 +309,31 @@
   /* border: 5px solid; */
   top: 700px;
   margin-left: 70px;
-  width: 700px;
+  width: 525px;
   justify-content: space-between;
   margin-top: 45px;
 }
 
 .in {
   color: #66c873;
-  font-size: 30px;
+  font-size: 18px;
   letter-spacing: 0.1rem;
 }
 .out {
   color: #f5465d;
-  font-size: 30px;
+  font-size: 18px;
   letter-spacing: 0.1rem;
 }
 .interest {
   color: #66c873;
-  font-size: 30px;
+  font-size: 18px;
   letter-spacing: 0.1rem;
 }
 /* IN OUT INTEREST */
 .span {
   font-weight: bold;
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 0.1rem;
 }
 /* IN OUT INTEREST */
@@ -350,10 +350,12 @@
   position: absolute;
   /* border: 5px solid; */
   top: 700px;
-  margin-left: 880px;
+  margin-left: 890px;
   font-size: 15px;
   font-weight: 500;
   margin-top: 52px;
+  width: 260px;
+  text-align: center;
 }
 .time {
   font-weight: bold;
