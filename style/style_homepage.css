@@ -1,0 +1,14 @@
+/* color-variable-store */
+:root{
+    --color-body: #f3f3f3;
+}
+/* color-variable-store */
+
+/* Log-in page model-window-close */
+.container{
+    display: none;
+}
+/* Log-in page model-window-close */
+body{
+background-color: var(--color-body);
+}
