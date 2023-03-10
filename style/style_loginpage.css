@@ -17,32 +17,13 @@ body {
   margin-top: 7%;
   border-radius: 25px;
 }
-
-.advertisement {
-  /* border-right: 5px solid; */
-  width: 450px;
-  height: 583px;
-  background-color: #c3ceda;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-}
-.add {
-  position: absolute;
-  /* border: 5px solid; */
-  text-align: center;
-  padding: 10px;
-  margin-top: 28%;
-  margin-left: 8%;
-  color: royalblue;
-}
-
 .form {
-  border: 15px solid aliceblue;
+  border: 5px solid;
   width: 450px;
   height: 583px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-radius: 20px;
   background-color: aliceblue;
+  margin-left: 27%;
 }
 form {
   /* border: 5px solid; */
@@ -90,7 +71,7 @@ form {
   text-align: center;
   margin-top: 20px;
 }
-.checkbox{
+.checkbox {
   position: absolute;
   /* border: 5px solid; */
   width: 250px;
@@ -100,17 +81,17 @@ form {
   margin-top: 250px;
   margin-left: 600px;
 }
-.done{
+.done {
   width: 200px;
   height: 200px;
- 
+  opacity: 0.7;
 }
-.display{
+.display {
   display: none;
 }
-.login{
- margin-left: 18px;
- font-size: 20px;
- text-decoration: none;
- font-weight: bolder;
+.login {
+  margin-left: 18px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bolder;
 }

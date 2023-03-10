@@ -112,7 +112,13 @@ let funa = localStorage.getItem("send");
 let userna = localStorage.getItem("send1");
 let pass = localStorage.getItem("send2");
 //login data recever//
-const verify = [account1.name,account2.name,account3.name,account4.name,account5.name];
+const verify = [
+  account1.name,
+  account2.name,
+  account3.name,
+  account4.name,
+  account5.name,
+];
 // console.log(verify);
 
 //
@@ -127,7 +133,7 @@ const account6 = {
   loanCount: 0,
   local: "en-IN",
 };
-let allAccount = [account1, account2, account3, account4, account5,account6];
+let allAccount = [account1, account2, account3, account4, account5, account6];
 //user login//
 ///using find method we can find the user data
 //Note :if the user name and pin are incorrect then the function will look for the name, if ther is no name find it will return error message to avoid this use '?'
@@ -162,31 +168,26 @@ const displayDates = function (date) {
 
 //setTimmerOut//
 
-const setTime = function () {
-  let min = 9;
-  let sec = 60;
+const startLogOutTimer = function () {
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+    timeOut.textContent = `${min}:${sec}`;
 
-  setInterval(function () {
-    if (sec === 0) {
-      min--;
-      sec = 60;
+    if (time === 0) {
+      clearInterval(timer);
+      logoName.textContent = "Log in to get started";
+      display.classList.add("display");
     }
-    sec--;
-    // if(min>=0&&min<=9)
-    // {
-    //   timeOut.textContent = `0${min}:${sec}`;
-    // }
-    if (sec >= 0 && sec <= 9) {
-      timeOut.textContent = `:0${min}:0${sec}`;
-    } else {
-      timeOut.textContent = `:0${min}:${sec}`;
-    }
-  }, 1000);
+    time--;
+  };
+  let time = 600;
+  tick();
+  const timer = setInterval(tick, 1000);
+  return timer;
 };
-const off = function () {
-  display.classList.add("display");
-};
-
+//setTimmerOut//
+let timer;
 const calcDayPassed = (date1, date2) =>
   Math.round(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24));
 const balanceDisplay = function (find, sort) {
@@ -229,15 +230,14 @@ const sumFun = function (find) {
   return sum;
 };
 const usercheck = function (user, pin) {
-  setTimeout(() => off(), 600000);
   let find = allAccount.find((mov) => mov?.name === user);
   if (user === find?.name && Number(pin) === find?.pin) {
-   
     display.classList.remove("display");
     usreNameDisplay.textContent = `Welcome you! ${find.fullName}`;
     logoName.textContent = "Good Morning...";
     sumFun(find);
-    setTime();
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
     whishshow();
     time.textContent = new Intl.DateTimeFormat(find?.local, option).format(
       nowIn
@@ -291,6 +291,8 @@ transferButton.addEventListener("click", function (e) {
   }
   transferName.value = transferAmount.value = "";
   balanceDisplay(find);
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
 loan.addEventListener("click", function () {
   let loan = Math.floor(loanRequest.value);
@@ -306,6 +308,8 @@ loan.addEventListener("click", function () {
   balanceDisplay(find);
   sumFun(find);
   loanRequest.value = "";
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
 closeAccount.addEventListener("click", function () {
   const find = allAccount.find((mov) => mov?.name === userAccountStore[0]);
