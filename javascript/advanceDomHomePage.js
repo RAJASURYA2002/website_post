@@ -69,11 +69,11 @@ learnMore_btn.addEventListener("click", function (e) {
 //new//
 document.querySelector('.nav_links').addEventListener('click',function(e)
 {
-         console.log(e.target);
+  e.preventDefault();
          if(e.target.classList.contains('nav_link'))
          {
-            e.preventDefault();
-            const id=this.getAttribute('href');
+            
+            const id=e.target.getAttribute('href');
             console.log(id);
             document.querySelector(id).scrollIntoView({behavior:'smooth'});
          }
