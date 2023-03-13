@@ -9,6 +9,12 @@
   --color-secondary: #ffcb03;
   --color-primary: #5ec576;
   --color-tertiary: #ff585f;
+  --color-secondary-opacity: #ffcd0331;
+  --color-secondary-darker: #ffbb00;
+  --color-primary-opacity: #5ec5763a;
+  --color-primary: #5ec576;
+  --color-tertiary-opacity: #ff58602d;
+  --color-tertiary: #ff585f;
 }
 /* color-variable-store */
 body {
@@ -197,14 +203,14 @@ margin-top: 430px;
   width: 250px;
   height: 50px;
   border-radius: 40px;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 8px;
   font-weight: 400;
   opacity: 0.9;
   font-family: "Poppins", sans-serif;
 }
 .num{
-  font-size: 19px;
+  font-size: 17px;
   font-weight: bolder;
 }
 .button_1 {
@@ -245,9 +251,9 @@ margin-top: 430px;
   margin-top: 70px;
   width: 670px;
   margin-left: 170px;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  font-weight: 500;
 }
 .info_detail{
   position: absolute;
@@ -261,12 +267,29 @@ margin-top: 430px;
   font-family: "Poppins", sans-serif;
   font-weight: 395;
 }
-.upload_img{
-  border: 2px solid;
+.upload_img_icon{
   position: absolute;
-  margin-top: 70px;
-  margin-left: 80px;
-  color: #fff6ce;
+  height: 65px;
+  width: 65px;
+  margin-top: 50px;
+  margin-left: 70px;
+  padding: 19px;
+  border-radius: 50%;
+}
+.col_1_svg{
+  fill: var(--color-secondary-darker);
+  background-color: var(--color-secondary-opacity);
+}
+.col_2_svg{
+  fill: var(--color-primary);
+  background-color: var(--color-primary-opacity);
+}
+.col_3_svg{
+  fill: var(--color-tertiary);
+  background-color: var(--color-tertiary-opacity);
+}
+.hidden{
+  display: none;
 }
 /* section_3 .container */
 

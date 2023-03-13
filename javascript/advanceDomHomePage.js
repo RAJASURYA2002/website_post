@@ -9,6 +9,11 @@ const section_4 = document.querySelector("#section_4");
 //button//
 const learnMore_btn = document.querySelector(".learn_more");
 
+//operation tabs//
+const operationBtnContainer=document.querySelector('.button_container');
+const btnOperation=document.querySelectorAll('.button_op');
+//operation tabs//
+
 ///////////////////////////////////////////////////////////////
 //smooth scrool//
 learnMore_btn.addEventListener("click", function (e) {
@@ -79,3 +84,21 @@ document.querySelector('.nav_links').addEventListener('click',function(e)
          }
 });
 //smooth scrool//
+
+//operation tabs//
+operationBtnContainer.addEventListener('click',function(e){
+  e.preventDefault();
+  const clicked=e.target.closest('.button_op');
+//  console.log(clicked);
+ //guard class
+ if(!clicked) return;
+
+ btnOperation.forEach(t=>t.classList.remove('above'));
+ clicked.classList.add('above');
+//  console.log(clicked.dataset.tab);
+ const hidden=document.querySelectorAll('.op_info');
+ hidden.forEach(t=>t.classList.add('hidden'));
+ const remove=document.querySelector(`.hidden_operation_${clicked.dataset.tab}`);
+ console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
+remove.classList.remove('hidden');
+});
