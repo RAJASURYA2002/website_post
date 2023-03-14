@@ -99,6 +99,6 @@ operationBtnContainer.addEventListener('click',function(e){
  const hidden=document.querySelectorAll('.op_info');
  hidden.forEach(t=>t.classList.add('hidden'));
  const remove=document.querySelector(`.hidden_operation_${clicked.dataset.tab}`);
- console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
+//  console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
 remove.classList.remove('hidden');
 });
