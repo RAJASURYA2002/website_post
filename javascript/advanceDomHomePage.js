@@ -1,11 +1,11 @@
 "use strict";
 ////////////////////////////////////////////////////////////////
 // scction//
-const section_1 = document.querySelector(".section");
+const section_1 = document.querySelector(".header");
 const section_2 = document.querySelector("#section_2");
 const section_3 = document.querySelector("#section_3");
 const section_4 = document.querySelector("#section_4");
-const nav=document.querySelector('nav');
+const nav = document.querySelector("nav");
 // scction//
 //button//
 const learnMore_btn = document.querySelector(".learn_more");
@@ -88,24 +88,26 @@ document.querySelector(".nav_links").addEventListener("click", function (e) {
 //smooth scrool//
 
 //operation tabs//
-// operationBtnContainer.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   const clicked = e.target.closest(".button_op");
-//   //  console.log(clicked);
-//   //guard class
-//   if (!clicked) return;
+operationBtnContainer.addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  const clicked = e.target.closest(".button_op");
+  // console.log(clicked);
+  //  console.log(clicked);
+  //guard class
+  if (!clicked) return;
 
-//   btnOperation.forEach((t) => t.classList.remove("above"));
-//   clicked.classList.add("above");
-//   //  console.log(clicked.dataset.tab);
-//   const hidden = document.querySelectorAll(".op_info");
-//   hidden.forEach((t) => t.classList.add("hidden"));
-//   const remove = document.querySelector(
-//     `.hidden_operation_${clicked.dataset.tab}`
-//   );
-//   //  console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
-//   remove.classList.remove("hidden");
-// });
+  btnOperation.forEach((t) => t.classList.remove("above"));
+  clicked.classList.add("above");
+  //  console.log(clicked.dataset.tab);
+  const hidden = document.querySelectorAll(".op_info");
+  hidden.forEach((t) => t.classList.add("hidden"));
+  const remove = document.querySelector(
+    `.hidden_operation_${clicked.dataset.tab}`
+  );
+  //  console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
+  remove.classList.remove("hidden");
+});
 
 ////opocity hover//
 const navOpacityController = function (e, opacity) {
@@ -129,16 +131,14 @@ navOpacity.addEventListener("mouseout", navOpacityController.bind(1));
 //important//
 ////opocity hover//
 
-
 //sticky navication//
-const stickycoords=section_2.getBoundingClientRect();
-window.addEventListener('scroll',function(){
-if(this.window.scrollY>stickycoords.top)
-{
-  nav.classList.add('sticky');
-}
-else{
-  nav.classList.remove('sticky');
-}
+const ss=document.querySelector('.features_heading');
+const stickycoords = section_2.getBoundingClientRect();
+window.addEventListener("scroll", function () {
+  if (this.window.scrollY > stickycoords.top-21) {
+    nav.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+  }
 });
 //sticky navication//
