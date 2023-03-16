@@ -165,19 +165,18 @@ a {
 /* section_1 */
 
 /* top */
-.button_above{
+.button_above {
   /* border: 2px solid; */
   position: fixed;
   bottom: 0px;
   right: 0;
 }
-.top_hidden{
+.top_hidden {
   display: none;
 }
-.img_up{
+.img_up {
   width: 40px;
   height: 40px;
- 
 }
 /* section_2 .container */
 .space {
@@ -438,42 +437,39 @@ a {
 .hidden {
   display: none;
 }
-.space_down_3
-{
+.space_down_3 {
   height: 130px;
 }
-.space_top_3{
+.space_top_3 {
   height: 88px;
 }
 /* section_3 .container */
 
-
-#section_4{
- width: 100%;
- height: 100%;
- background-color: #f3f3f3;
+#section_4 {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
 }
-.section_4_info{
+.section_4_info {
   /* border: 2px solid; */
   margin-left: 300px;
   height: 125px;
   width: 800px;
   margin-top: 5px;
 }
-.section_4_heading{
+.section_4_heading {
   color: #5ec576;
   font-family: "Poppins", sans-serif;
 }
-.section_4_detail
-{
+.section_4_detail {
   color: #444444;
   font-size: 40px;
   font-family: "Poppins", sans-serif;
 }
-.space_top_4{
+.space_top_4 {
   height: 150px;
 }
-.slid_container{
+.slid_container {
   position: relative;
   /* border: 3px solid; */
   width: 68%;
@@ -483,7 +479,7 @@ a {
 }
 .highlight_4 {
   width: 65%;
-  
+
   position: relative;
 }
 .highlight_4::before {
@@ -500,7 +496,7 @@ a {
   color: var(--color-primary);
   z-index: 1;
 }
-.user_commant_heading{
+.user_commant_heading {
   /* border: 2px solid; */
   color: #444444;
   margin-left: 160px;
@@ -512,7 +508,7 @@ a {
   font-family: "Poppins", sans-serif;
   padding: 15px;
 }
-.user_commant_detail{
+.user_commant_detail {
   position: absolute;
   /* border: 3px solid; */
   margin-left: 180px;
@@ -525,32 +521,31 @@ a {
   /* color: rgb(146,140,150); */
   /* font-weight: bolder; */
 }
-.profile_detail{
+.profile_detail {
   display: flex;
   /* border: 3px solid; */
   margin-top: 200px;
   width: 200px;
   margin-left: 200px;
   justify-content: space-between;
-  
 }
-.image_pro{
+.image_pro {
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
-.image_detail{
+.image_detail {
   padding: 10px;
 }
-.name{
+.name {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
 }
-.address{
+.address {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
-.slid_btn{
+.slid_btn {
   display: flex;
   position: absolute;
   /* border: 3px solid; */
@@ -559,8 +554,7 @@ a {
   top: 140px;
   justify-content: space-between;
 }
-.btn_slid
-{
+.btn_slid {
   cursor: pointer;
   width: 70px;
   height: 70px;
@@ -570,7 +564,6 @@ a {
   font-size: 30px;
   font-weight: bold;
   border: none;
-
 }
 /* Log-in page model-window-close */
 .container {

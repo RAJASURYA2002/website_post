@@ -6,7 +6,7 @@ const section_2 = document.querySelector("#section_2");
 const section_3 = document.querySelector("#section_3");
 const section_4 = document.querySelector("#section_4");
 const nav = document.querySelector("nav");
-const top1=document.querySelector('.a');
+const top1 = document.querySelector(".a");
 // scction//
 //button//
 const learnMore_btn = document.querySelector(".learn_more");
@@ -82,7 +82,7 @@ document.querySelector(".nav_links").addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("nav_link")) {
     const id = e.target.getAttribute("href");
-  
+
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
@@ -91,7 +91,7 @@ document.querySelector(".nav_links").addEventListener("click", function (e) {
 //operation tabs//
 operationBtnContainer.addEventListener("click", function (e) {
   e.preventDefault();
-  
+
   const clicked = e.target.closest(".button_op");
   // console.log(clicked);
   //  console.log(clicked);
@@ -133,22 +133,22 @@ navOpacity.addEventListener("mouseout", navOpacityController.bind(1));
 ////opocity hover//
 
 //sticky navication//
-const ss=document.querySelector('.features_heading');
+const ss = document.querySelector(".features_heading");
 const stickycoords = section_2.getBoundingClientRect();
 window.addEventListener("scroll", function () {
-  if (this.window.scrollY > stickycoords.top-10) {
+  if (this.window.scrollY > stickycoords.top - 10) {
     nav.classList.add("sticky");
-    top1.classList.remove('top_hidden');
+    top1.classList.remove("top_hidden");
     // console.log(top1);
   } else {
     nav.classList.remove("sticky");
-    top1.classList.add('top_hidden');
+    top1.classList.add("top_hidden");
     // section_1.scrollIntoView({ behavior: "smooth" });
   }
 });
 //sticky navication//
-top1.addEventListener('click',function(e)
-{
+top1.addEventListener("click", function (e) {
   e.preventDefault();
   section_1.scrollIntoView({ behavior: "smooth" });
 });
+
