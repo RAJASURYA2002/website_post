@@ -609,7 +609,7 @@ a {
   /* border: 3px solid; */
   width: 850px;
   height: 200px;
-  margin-left: 300px;
+  margin-left: 23%;
   font-size: 42px;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -617,7 +617,7 @@ a {
 }
 .footer_btn{
   border: 2px solid;
-  margin-left: 480px;
+  margin-left: 35%;
   width: 350px;
   height: 60px;
   border-radius: 50px;
@@ -627,7 +627,7 @@ a {
   font-weight: 500;
   border: none;
 }
-.space
+.space_foot
 {
   height: 100px;
 }

@@ -168,12 +168,10 @@ btnForm.addEventListener('click',function(e)
 const close=document.querySelector('body');
 let a=0;
 close.addEventListener('click',function(e)
-{
- let c=0;
-  
-const click=e.target.classList.contains('form_1');
-console.log(e.target.getAttribute('class').contains("form_1"));
-    
+{ 
+    if(e.target.classList.contains('form_1')) return;
+      form.classList.add('hidden_log');
+      op.classList.remove('opacity');
 });
 document.addEventListener("keydown", function (e) {
   // console.log(e.key);
