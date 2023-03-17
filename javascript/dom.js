@@ -66,6 +66,7 @@ const account1 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
+  transferName:[],
 };
 const account2 = {
   fullName: "PONJEEVA J",
@@ -76,6 +77,7 @@ const account2 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
+  transferName:[],
 };
 const account3 = {
   fullName: "HARISH V",
@@ -86,6 +88,7 @@ const account3 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
+  transferName:[],
 };
 const account4 = {
   fullName: "SHANKAR ",
@@ -96,6 +99,7 @@ const account4 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
+  transferName:[],
 };
 const account5 = {
   fullName: "Shivaprakash",
@@ -106,6 +110,7 @@ const account5 = {
   total: 0,
   loanCount: 0,
   local: "ta-IN",
+  transferName:[],
 };
 //login data recever//
 let funa = localStorage.getItem("send");
@@ -132,8 +137,10 @@ const account6 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
+  transferName:[],
 };
 let allAccount = [account1, account2, account3, account4, account5, account6];
+
 //user login//
 ///using find method we can find the user data
 //Note :if the user name and pin are incorrect then the function will look for the name, if ther is no name find it will return error message to avoid this use '?'
@@ -152,9 +159,12 @@ const option2 = {
 };
 
 let userAccountStore = [];
+
 const displayDates = function (date) {
   const dis = calcDayPassed(new Date(), date);
-  if (dis === 0) return "Today";
+  const find = allAccount.find((mov) => mov?.name === userAccountStore[0]);
+  const name=find?.transferName[find.transferName.length-1];
+  if (dis === 0) return `Today [${name.charAt(0).toUpperCase()+name.slice(1)}]`;
   if (dis === 1) return "Yesterday";
   if (dis === 2) return "3 Days ago";
   if (dis === 7) return "A week ago";
@@ -242,6 +252,8 @@ const usercheck = function (user, pin) {
     time.textContent = new Intl.DateTimeFormat(find?.local, option).format(
       nowIn
     );
+    // userNameAm=[];
+    
   } else {
     errorMessage.classList.remove("display1");
     display.classList.add("display");
@@ -265,6 +277,7 @@ userLoginButton.addEventListener("click", function (e) {
 transferButton.addEventListener("click", function (e) {
   e.preventDefault();
   const nameTransfer = transferName.value;
+
   const amount = transferAmount.value;
   const findAmountTransfer = allAccount.find(
     (mov) => mov?.name === nameTransfer
@@ -278,8 +291,9 @@ transferButton.addEventListener("click", function (e) {
     if (amount > 0 && amount <= sum) {
       findAmountTransfer?.balance.push(Number(amount)); //to the other user
       find?.balance.push(Number(amount * -1)); //my account
-
-      let now = new Date();
+      find?.transferName.push(nameTransfer);
+      findAmountTransfer?.transferName.push(find?.name);
+      // let now = new Date();
       find?.dates.push(now);
       findAmountTransfer?.dates.push(now);
       sumFun(find);
@@ -302,6 +316,7 @@ loan.addEventListener("click", function () {
     find.loanCount = 1;
     let now = new Date();
     find?.dates.push(now);
+    find?.transferName.push("Loan Amount");
   } else {
     alert("Error:code:001:>0<1000000\n (or) you exceed your limit...");
   }
