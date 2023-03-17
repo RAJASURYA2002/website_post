@@ -89,9 +89,10 @@ document.querySelector(".nav_links").addEventListener("click", function (e) {
 //smooth scrool//
 
 //operation tabs//
+
 operationBtnContainer.addEventListener("click", function (e) {
   e.preventDefault();
-
+// console.log(e.target);
   const clicked = e.target.closest(".button_op");
   // console.log(clicked);
   //  console.log(clicked);
@@ -151,4 +152,33 @@ top1.addEventListener("click", function (e) {
   e.preventDefault();
   section_1.scrollIntoView({ behavior: "smooth" });
 });
-
+//login_btn
+const form=document.querySelector('.container');
+const btnForm=document.querySelector('.btn_open_account');
+const op=document.querySelector('.op');
+btnForm.addEventListener('click',function(e)
+{
+  // console.log("hi");
+  e.preventDefault();
+  // form.classList.remove('container');
+  form.classList.remove('hidden_log');
+  op.classList.add('opacity');
+});
+//login_btn
+const close=document.querySelector('body');
+let a=0;
+close.addEventListener('click',function(e)
+{
+ let c=0;
+  
+const click=e.target.classList.contains('form_1');
+console.log(e.target.getAttribute('class').contains("form_1"));
+    
+});
+document.addEventListener("keydown", function (e) {
+  // console.log(e.key);
+  if (e.key === "Escape") {
+    form.classList.add('hidden_log');
+    op.classList.remove('opacity');
+  }
+});

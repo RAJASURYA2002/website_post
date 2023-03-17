@@ -8,29 +8,31 @@ body {
 }
 .container {
   display: flex;
+  position: fixed;
   position: relative;
   /* border:  5px solid aliceblue; */
   box-shadow: 15px black;
   width: 900px;
   height: 592px;
   margin-left: 18%;
-  margin-top: 7%;
+  margin-top: 0%;
   border-radius: 25px;
 }
 .form {
-  border: 5px solid;
+  /* border: 5px solid;
   width: 450px;
-  height: 583px;
+  height: 500px;
   border-radius: 20px;
-  background-color: aliceblue;
-  margin-left: 27%;
+  background-color: aliceblue; */
+  margin-left: 25%;
+  opacity: 1;
 }
 form {
   /* border: 5px solid; */
   width: 300px;
   height: 500px;
   margin-left: 68px;
-  margin-top: 38px;
+  margin-top: 80px;
   padding: 15px;
 }
 .logo {
@@ -70,6 +72,7 @@ form {
 .al_acc {
   text-align: center;
   margin-top: 20px;
+  
 }
 .checkbox {
   position: absolute;
@@ -94,4 +97,7 @@ form {
   font-size: 20px;
   text-decoration: none;
   font-weight: bolder;
+}
+.a{
+  color: blue;
 }
