@@ -50,6 +50,8 @@ const body = document.querySelector("body");
 const sort = document.querySelector(".sort");
 const timeOut = document.querySelector(".timeout");
 const whish = document.querySelector(".logoname");
+const WelcomeBonusDate=new Date();
+// console.log(WelcomeBonusDate);
 const account1 = {
   fullName: "RAJASURYA R",
   name: "surya",
@@ -66,51 +68,51 @@ const account1 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:[],
+  transferName:["Harish","Ponjeeva","Shankar","Loan Amount","harish","Loan Amount"],
 };
 const account2 = {
   fullName: "PONJEEVA J",
   name: "ponjeeva",
   pin: 2013073,
-  balance: [],
-  dates: [],
+  balance: [1000],
+  dates: [WelcomeBonusDate],
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:[],
+  transferName:["Welcome Bonus"],
 };
 const account3 = {
   fullName: "HARISH V",
   name: "harish",
   pin: 2013030,
-  balance: [],
-  dates: [],
+  balance: [1000],
+  dates: [WelcomeBonusDate],
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:[],
+  transferName:["Welcome Bonus"],
 };
 const account4 = {
   fullName: "SHANKAR ",
   name: "shankar",
   pin: 2013097,
-  balance: [],
-  dates: [],
+  balance: [1000],
+  dates: [WelcomeBonusDate],
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:[],
+  transferName:["Welcome Bonus"],
 };
 const account5 = {
   fullName: "Shivaprakash",
   name: "shivaprakash",
   pin: 2013099,
-  balance: [],
-  dates: [],
+  balance: [1000],
+  dates: [WelcomeBonusDate],
   total: 0,
   loanCount: 0,
   local: "ta-IN",
-  transferName:[],
+  transferName:["Welcome Bonus"],
 };
 //login data recever//
 let funa = localStorage.getItem("send");
@@ -132,12 +134,12 @@ const account6 = {
   fullName: funa,
   name: userna,
   pin: Number(pass),
-  balance: [],
-  dates: [],
+  balance: [1000],
+  dates: [WelcomeBonusDate],
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:[],
+  transferName:["Welcome Bonus"],
 };
 let allAccount = [account1, account2, account3, account4, account5, account6];
 
@@ -160,19 +162,19 @@ const option2 = {
 
 let userAccountStore = [];
 
-const displayDates = function (date) {
+const displayDates = function (date,name) {
   const dis = calcDayPassed(new Date(), date);
-  const find = allAccount.find((mov) => mov?.name === userAccountStore[0]);
-  const name=find?.transferName[find.transferName.length-1];
-  if (dis === 0) return `Today [${name.charAt(0).toUpperCase()+name.slice(1)}]`;
-  if (dis === 1) return "Yesterday";
-  if (dis === 2) return "3 Days ago";
-  if (dis === 7) return "A week ago";
+  let nameDisplay=name.charAt(0).toUpperCase()+name.slice(1);
+  // console.log(name.charAt(0).toUpperCase());
+  if (dis === 0) return `Today [${nameDisplay}]`;
+  if (dis === 1) return `Yesterday [${nameDisplay}]`;
+  if (dis === 2) return `3 Days ago [${nameDisplay}]`;
+  if (dis === 7) return `A week ago [${nameDisplay}]`;
   else {
     const day = `${date.getDate()}`.padStart(2, 0);
     const month = `${date.getMonth()}`.padStart(2, 0);
     const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    return `${day}/${month}/${year} [${nameDisplay}]`;
   }
 };
 
@@ -206,9 +208,12 @@ const balanceDisplay = function (find, sort) {
   const displayDate = find?.dates;
 
   const movs = sort ? temp.slice().sort((a, b) => a - b) : temp;
+  const find1 = allAccount.find((mov) => mov?.name === userAccountStore[0]);
   movs.forEach(function (mov, i) {
     const now = new Date(displayDate[i]);
-    let date = displayDates(now);
+    const name=find1?.transferName[i];
+    // console.log(find1.transferName[i]);
+    let date = displayDates(now,name);
     const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `<div class="d_w_a_container">
                   <div class="d_w_date_container">
@@ -371,15 +376,15 @@ const whishshow = function () {
   } else if (daywish >= 12 && daywish < 15) {
     whish.textContent = "Good Afternoon...";
     // alert("All You Need Is Lunch.\n Have you taken your lunch!...");
-  } else if (daywish >= 15 && daywish < 18) {
+  } else if (daywish >= 15 && daywish < 22) {
     whish.textContent = "Good Evening...";
     // alert("Refresh and refresh with Tea!...\n Good Evening...");
-  } else if (daywish >= 18 && daywish < 22) {
+  } else if (daywish >= 22 && daywish < 24) {
     whish.textContent = "Good Night...";
     // alert(
     //   // "“Night is the wonderful opportunity to take rest, to forgive, to smile, to get ready for all the battles that you have to fight tomorrow.” “As the night gets dark, let your worries fade. Sleep peacefully knowing you've done all you can do for today.” “The night is more alive and more richly colored than the day.”"
     // );
-  } else if ((daywish >= 22 && daywish < 24) || (daywish >= 1 && daywish < 5)) {
+  } else if ((daywish >= 1 && daywish < 5)) {
     whish.textContent = "Good Noon...";
     // alert("The dead of midnight is the noon of thought.");
   } else {

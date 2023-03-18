@@ -160,7 +160,7 @@ const op=document.querySelector('.op');
 
 btnForm.forEach((e)=>
 {
-  console.log(e);
+  // console.log(e);
   e.addEventListener('click',function(e)
   {
     e.preventDefault();
