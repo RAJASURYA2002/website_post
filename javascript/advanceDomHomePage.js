@@ -154,19 +154,22 @@ top1.addEventListener("click", function (e) {
 });
 //login_btn
 const form=document.querySelector('.container');
-const btnForm=document.querySelector('.btn_open_account');
+const btnForm=document.querySelectorAll('.acbtn');
 const op=document.querySelector('.op');
-btnForm.addEventListener('click',function(e)
+
+
+btnForm.forEach((e)=>
 {
-  // console.log("hi");
-  e.preventDefault();
-  // form.classList.remove('container');
-  form.classList.remove('hidden_log');
-  op.classList.add('opacity');
+  console.log(e);
+  e.addEventListener('click',function(e)
+  {
+    e.preventDefault();
+    form.classList.remove('hidden_log');
+    op.classList.add('opacity');
+  });
 });
 //login_btn
 const close=document.querySelector('body');
-let a=0;
 close.addEventListener('click',function(e)
 { 
     if(e.target.classList.contains('form_1')) return;

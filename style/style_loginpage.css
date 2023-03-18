@@ -70,9 +70,9 @@ form {
   cursor: pointer;
 }
 .al_acc {
-  text-align: center;
+  /* text-align: center; */
   margin-top: 20px;
-  
+  margin-left: 37px;
 }
 .checkbox {
   position: absolute;
