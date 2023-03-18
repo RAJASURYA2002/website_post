@@ -272,13 +272,19 @@ const usercheck = function (user, pin) {
   userAccountStore = [user];
   balanceDisplay(find);
 };
-userLoginButton.addEventListener("click", function (e) {
+const login=document.getElementById('suma');
+login.addEventListener('keypress',function(e)
+{
+if(e.key=="Enter"){
   e.preventDefault();
   const user = inputUser.value;
   const pin = inputPin.value;
   usercheck(user, pin);
   inputUser.value = inputPin.value = "";
+}
 });
+// userLoginButton.addEventListener("click", function (e) {
+// });
 transferButton.addEventListener("click", function (e) {
   e.preventDefault();
   const nameTransfer = transferName.value;
