@@ -154,7 +154,7 @@ navOpacity.addEventListener("mouseout", navOpacityController.bind(1));
 
 //sticky navication-new school//
 const navheight=nav.getBoundingClientRect().height;
-console.log(navheight);
+// console.log(navheight);
 const stickyNav=function(entries)
 {
   const [entry]=entries;
@@ -164,13 +164,41 @@ const stickyNav=function(entries)
 const headerObserver=new IntersectionObserver(stickyNav,{root:null,threshold:0,rootMargin:`-${navheight}px`});
 headerObserver.observe(header);
 //sticky navication-new school//
+//sectionAnimation//
+const allSection=document.querySelectorAll('.section');
+const revealSection=function(entries,observer){
+  const [entry]=entries;
+  if(!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+const sectionObserver=new IntersectionObserver(revealSection,{root:null,threshold:0.15});
 
+allSection.forEach(function(section)
+{
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
+//sectionAnimation//
 
+// img_lazy
+const imgTargets=document.querySelectorAll('img[data-src]');
+const loadImg=function(entries,observer)
+{
+  const [entry]=entries;
+  if(!entry.isIntersecting) return;
+  entry.target.src=entry.target.dataset.src;
+  entry.target.addEventListener('load',function(){
+       entry.target.classList.remove('img_lazy');
+  });
+};
+const imgObserver=new IntersectionObserver(loadImg,{root:null,threshold:0,});
+imgTargets.forEach(img=>imgObserver.observe(img));
 
 
 top1.addEventListener("click", function (e) {
   e.preventDefault();
-  section_1.scrollIntoView({ behavior: "smooth" });
+  header.scrollIntoView({ behavior: "smooth" });
 });
 //login_btn
 const form=document.querySelector('.container');
@@ -203,3 +231,44 @@ document.addEventListener("keydown", function (e) {
     op.classList.remove('opacity');
   }
 });
+
+//slider_button
+const slide=document.querySelectorAll('.commant_container');
+const slider=document.querySelector('.slid_container');
+const rightSlidBtn=document.querySelector('.btn_right');
+const leftSlidBtn=document.querySelector('.btn_left');
+let curSlide=0;
+const maxSlider=slide.length;
+// slider.style.transform='scale(0.4) translateX(-800px)';
+// slider.style.overflow='visible';
+const goToSlid=function(slides)
+{
+  slide.forEach((s,i)=>(s.style.transform=`translateX(${100*(i-slides)}%)`));
+};
+goToSlid(0);
+const nextSlid=function(){
+  if(curSlide===maxSlider-1)
+  {
+    curSlide=0;
+  }
+  else{
+    curSlide++;
+  }
+  goToSlid(curSlide);
+};
+const preSlide=function(){
+  if(curSlide==0)
+  {
+    curSlide=maxSlider-1;
+  }
+  else
+  {
+    curSlide--;
+  }
+  goToSlid(curSlide);
+}
+rightSlidBtn.addEventListener('click',nextSlid);
+leftSlidBtn.addEventListener('click',preSlide); 
+
+
+//slider_button

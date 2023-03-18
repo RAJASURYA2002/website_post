@@ -27,8 +27,18 @@ body {
   position: relative;
  
 }
+/* sectionAnimation */
+.section--hidden{
+  opacity: 0;
+  transform: translateY(2rem);
+}
+/* sectionAnimation */
 .opacity{
   opacity: 0.2;
+}
+
+.img_lazy{
+  filter: blur(9px);
 }
 /* section_1 */
 /* nav_container */
@@ -186,6 +196,7 @@ a {
 /* section_2 .container */
 .space {
   height: 170px;
+  /* position: absolute; */
 }
 .space_down {
   height: 100px;
@@ -461,7 +472,7 @@ a {
   margin-left: 300px;
   height: 125px;
   width: 800px;
-  margin-top: 5px;
+  margin-top: 27px;
 }
 .section_4_heading {
   color: #5ec576;
@@ -478,9 +489,10 @@ a {
 .slid_container {
   position: relative;
   /* border: 3px solid; */
+  display: flex;
   width: 68%;
   height: 420px;
-  margin-top: 130px;
+  margin-top: 100px;
   margin-left: 250px;
 }
 .highlight_4 {
@@ -553,17 +565,18 @@ a {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
-.slid_btn {
+/* .slid_btn {
   display: flex;
   position: absolute;
-  /* border: 3px solid; */
+  border: 3px solid;
   width: 60rem;
   height: 70px;
   top: 140px;
   justify-content: space-between;
-}
+} */
 .btn_slid {
   cursor: pointer;
+  position: absolute;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -572,6 +585,15 @@ a {
   font-size: 30px;
   font-weight: bold;
   border: none;
+}
+
+.btn_left{
+  left: 0;
+  bottom: 50%;
+}
+.btn_right{
+  right: 0;
+  bottom: 50%;
 }
 .slid_hidden
 {
