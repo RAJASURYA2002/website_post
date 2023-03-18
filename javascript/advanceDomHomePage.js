@@ -1,7 +1,7 @@
 "use strict";
 ////////////////////////////////////////////////////////////////
 // scction//
-const section_1 = document.querySelector(".header");
+const header = document.querySelector(".header");
 const section_2 = document.querySelector("#section_2");
 const section_3 = document.querySelector("#section_3");
 const section_4 = document.querySelector("#section_4");
@@ -133,21 +133,41 @@ navOpacity.addEventListener("mouseout", navOpacityController.bind(1));
 //important//
 ////opocity hover//
 
-//sticky navication//
-const ss = document.querySelector(".features_heading");
-const stickycoords = section_2.getBoundingClientRect();
-window.addEventListener("scroll", function () {
-  if (this.window.scrollY > stickycoords.top - 10) {
-    nav.classList.add("sticky");
-    top1.classList.remove("top_hidden");
-    // console.log(top1);
-  } else {
-    nav.classList.remove("sticky");
-    top1.classList.add("top_hidden");
-    // section_1.scrollIntoView({ behavior: "smooth" });
-  }
-});
-//sticky navication//
+
+
+
+//sticky navication_old school//
+// const ss = document.querySelector(".features_heading");
+// const stickycoords = section_2.getBoundingClientRect();
+// window.addEventListener("scroll", function () {
+//   if (this.window.scrollY > stickycoords.top - 10) {
+//     nav.classList.add("sticky");
+//     top1.classList.remove("top_hidden");
+//     // console.log(top1);
+//   } else {
+//     nav.classList.remove("sticky");
+//     top1.classList.add("top_hidden");
+//     // section_1.scrollIntoView({ behavior: "smooth" });
+//   }
+// });
+//sticky navication-old school//
+
+//sticky navication-new school//
+const navheight=nav.getBoundingClientRect().height;
+console.log(navheight);
+const stickyNav=function(entries)
+{
+  const [entry]=entries;
+  if(!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove("sticky");
+};
+const headerObserver=new IntersectionObserver(stickyNav,{root:null,threshold:0,rootMargin:`-${navheight}px`});
+headerObserver.observe(header);
+//sticky navication-new school//
+
+
+
+
 top1.addEventListener("click", function (e) {
   e.preventDefault();
   section_1.scrollIntoView({ behavior: "smooth" });
