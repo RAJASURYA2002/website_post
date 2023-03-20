@@ -233,42 +233,42 @@ document.addEventListener("keydown", function (e) {
 });
 
 //slider_button
-const slide=document.querySelectorAll('.commant_container');
-const slider=document.querySelector('.slid_container');
-const rightSlidBtn=document.querySelector('.btn_right');
-const leftSlidBtn=document.querySelector('.btn_left');
-let curSlide=0;
-const maxSlider=slide.length;
-// slider.style.transform='scale(0.4) translateX(-800px)';
+const slides=document.querySelectorAll('.slide');
+const slider=document.querySelector('.slide_container');
+const btnRight=document.querySelector('.slider__btn--right');
+const btnLeft=document.querySelector('.slider__btn--left');
 // slider.style.overflow='visible';
-const goToSlid=function(slides)
-{
-  slide.forEach((s,i)=>(s.style.transform=`translateX(${100*(i-slides)}%)`));
-};
-goToSlid(0);
-const nextSlid=function(){
-  if(curSlide===maxSlider-1)
-  {
-    curSlide=0;
-  }
-  else{
-    curSlide++;
-  }
-  goToSlid(curSlide);
-};
-const preSlide=function(){
-  if(curSlide==0)
-  {
-    curSlide=maxSlider-1;
-  }
-  else
-  {
-    curSlide--;
-  }
-  goToSlid(curSlide);
+let curSlide=0;
+let maxSlide=slides.length;
+const goToSlide=function(slide){
+    slides.forEach((s,i)=>(s.style.transform=`translateX(${100*(i-slide)}%)`)
+    );
 }
-rightSlidBtn.addEventListener('click',nextSlid);
-leftSlidBtn.addEventListener('click',preSlide); 
+goToSlide(0);
+
+const nextSlide=function(){
+    if(curSlide=== maxSlide-1)
+    {
+        curSlide=0
+    }
+    else{
+        curSlide++;
+    }
+    goToSlide(curSlide);
+}
+const prevSlide=function(){
+    if(curSlide=== 0)
+    {
+        curSlide=maxSlide-1
+    }
+    else{
+        curSlide--;
+    }
+    goToSlide(curSlide);
+};
+// slides.forEach((s,i)=>(s.style.transform=`translateX(${100*i}%)`));
+btnRight.addEventListener('click',nextSlide);
+btnLeft.addEventListener('click',prevSlide);
 
 
 //slider_button
