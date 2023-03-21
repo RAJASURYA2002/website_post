@@ -280,6 +280,7 @@ if(e.key=="Enter"){
   const user = inputUser.value;
   const pin = inputPin.value;
   usercheck(user, pin);
+  console.log("hi");
   inputUser.value = inputPin.value = "";
 }
 });
