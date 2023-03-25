@@ -50,7 +50,7 @@ const body = document.querySelector("body");
 const sort = document.querySelector(".sort");
 const timeOut = document.querySelector(".timeout");
 const whish = document.querySelector(".logoname");
-const WelcomeBonusDate=new Date();
+const WelcomeBonusDate = new Date();
 // console.log(WelcomeBonusDate);
 const account1 = {
   fullName: "RAJASURYA R",
@@ -68,7 +68,14 @@ const account1 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:["Harish","Ponjeeva","Shankar","Loan Amount","harish","Loan Amount"],
+  transferName: [
+    "Harish",
+    "Ponjeeva",
+    "Shankar",
+    "Loan Amount",
+    "harish",
+    "Loan Amount",
+  ],
 };
 const account2 = {
   fullName: "PONJEEVA J",
@@ -79,7 +86,7 @@ const account2 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:["Welcome Bonus"],
+  transferName: ["Welcome Bonus"],
 };
 const account3 = {
   fullName: "HARISH V",
@@ -90,7 +97,7 @@ const account3 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:["Welcome Bonus"],
+  transferName: ["Welcome Bonus"],
 };
 const account4 = {
   fullName: "SHANKAR ",
@@ -101,7 +108,7 @@ const account4 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:["Welcome Bonus"],
+  transferName: ["Welcome Bonus"],
 };
 const account5 = {
   fullName: "Shivaprakash",
@@ -112,7 +119,7 @@ const account5 = {
   total: 0,
   loanCount: 0,
   local: "ta-IN",
-  transferName:["Welcome Bonus"],
+  transferName: ["Welcome Bonus"],
 };
 //login data recever//
 let funa = localStorage.getItem("send");
@@ -139,7 +146,7 @@ const account6 = {
   total: 0,
   loanCount: 0,
   local: "en-IN",
-  transferName:["Welcome Bonus"],
+  transferName: ["Welcome Bonus"],
 };
 let allAccount = [account1, account2, account3, account4, account5, account6];
 
@@ -162,9 +169,9 @@ const option2 = {
 
 let userAccountStore = [];
 
-const displayDates = function (date,name) {
+const displayDates = function (date, name) {
   const dis = calcDayPassed(new Date(), date);
-  let nameDisplay=name.charAt(0).toUpperCase()+name.slice(1);
+  let nameDisplay = name.charAt(0).toUpperCase() + name.slice(1);
   // console.log(name.charAt(0).toUpperCase());
   if (dis === 0) return `Today [${nameDisplay}]`;
   if (dis === 1) return `Yesterday [${nameDisplay}]`;
@@ -211,9 +218,9 @@ const balanceDisplay = function (find, sort) {
   const find1 = allAccount.find((mov) => mov?.name === userAccountStore[0]);
   movs.forEach(function (mov, i) {
     const now = new Date(displayDate[i]);
-    const name=find1?.transferName[i];
+    const name = find1?.transferName[i];
     // console.log(find1.transferName[i]);
-    let date = displayDates(now,name);
+    let date = displayDates(now, name);
     const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `<div class="d_w_a_container">
                   <div class="d_w_date_container">
@@ -258,7 +265,6 @@ const usercheck = function (user, pin) {
       nowIn
     );
     // userNameAm=[];
-    
   } else {
     errorMessage.classList.remove("display1");
     display.classList.add("display");
@@ -272,17 +278,16 @@ const usercheck = function (user, pin) {
   userAccountStore = [user];
   balanceDisplay(find);
 };
-const login=document.getElementById('suma');
-login.addEventListener('keypress',function(e)
-{
-if(e.key=="Enter"){
-  e.preventDefault();
-  const user = inputUser.value;
-  const pin = inputPin.value;
-  usercheck(user, pin);
-  console.log("hi");
-  inputUser.value = inputPin.value = "";
-}
+const login = document.getElementById("suma");
+login.addEventListener("keypress", function (e) {
+  if (e.key == "Enter") {
+    e.preventDefault();
+    const user = inputUser.value;
+    const pin = inputPin.value;
+    usercheck(user, pin);
+    console.log("hi");
+    inputUser.value = inputPin.value = "";
+  }
 });
 // userLoginButton.addEventListener("click", function (e) {
 // });
@@ -391,7 +396,7 @@ const whishshow = function () {
     // alert(
     //   // "“Night is the wonderful opportunity to take rest, to forgive, to smile, to get ready for all the battles that you have to fight tomorrow.” “As the night gets dark, let your worries fade. Sleep peacefully knowing you've done all you can do for today.” “The night is more alive and more richly colored than the day.”"
     // );
-  } else if ((daywish >= 1 && daywish < 5)) {
+  } else if (daywish >= 1 && daywish < 5) {
     whish.textContent = "Good Noon...";
     // alert("The dead of midnight is the noon of thought.");
   } else {
