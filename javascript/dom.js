@@ -408,3 +408,8 @@ const whishshow = function () {
 // console.log(send.name);
 // let funaz = localStorage.getItem("send");
 // console.log(funaz);
+window.addEventListener('beforeunload',function(e)
+{
+  e.preventDefault();
+  e.returnValue='';
+});
