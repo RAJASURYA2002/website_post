@@ -101,14 +101,14 @@ operationBtnContainer.addEventListener("click", function (e) {
 
   btnOperation.forEach((t) => t.classList.remove("above"));
   clicked.classList.add("above");
-  //  console.log(clicked.dataset.tab);
+  //  console.log(clicked.dataset.tab);++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   const hidden = document.querySelectorAll(".op_info");
   hidden.forEach((t) => t.classList.add("hidden"));
   const remove = document.querySelector(
     `.hidden_operation_${clicked.dataset.tab}`
   );
   //  console.log(document.querySelector(`.hidden_operation_${clicked.dataset.tab}`));
-  remove.classList.remove("hidden");
+  //remove.classList.remove("hidden");
 });
 
 ////opocity hover//
